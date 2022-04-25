@@ -56,10 +56,12 @@ public class Staff extends Person implements PayRoll {
         this.duty = duty;
     }
 
+    @Override
     public void setCategory(String category) {
         this.category = category;
     }
 
+    @Override
     public String getCategory() {
         return this.category;
     }

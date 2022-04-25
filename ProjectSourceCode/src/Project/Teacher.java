@@ -24,11 +24,13 @@ public class Teacher extends Person {
         this.specialty = specialty;
         this.category = category;
     }
-
+    
+    @Override
     public void setCategory(String category) {
         this.category = category;
     }
 
+    @Override
     public String getCategory() {
         return this.category;
     }

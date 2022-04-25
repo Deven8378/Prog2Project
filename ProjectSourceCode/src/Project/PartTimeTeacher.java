@@ -33,11 +33,11 @@ public class PartTimeTeacher extends Teacher implements PayRoll {
         final double BachRate = 42;
         double degreeRate = 0.0;
 
-        if (this.getDegree() == "PhD") {
+        if (this.getDegree().equals("PhD")) {
             degreeRate = PhDRate;
-        } else if (this.getDegree() == "Master") {
+        } else if (this.getDegree().equals("Master")) {
             degreeRate = MasterRate;
-        } else if (this.getDegree() == "Bachelor") {
+        } else if (this.getDegree().equals("Bachelor")) {
             degreeRate = BachRate;
         }
        return payRoll = 0.76 * (this.hoursWorked * degreeRate * 2);

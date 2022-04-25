@@ -13,7 +13,7 @@ public abstract class Person {
         this.fName = "";
         this.lName = "";
         this.email = "";
-       this. age = 0;
+        this. age = 0;
         Person.personID++;
     }
 
@@ -73,18 +73,26 @@ public abstract class Person {
     public int getPersonID() {
         return Person.personID;
     }
-
+    
+    @Override
     public String toString() {
-        String str = String.format("%-10s%-10s\n","Person's Category: ", this.getCategory());
-        str = String.format("%-10s%-4d\n","Person's ID: ",Person.personID);
-        str += String.format("%-10%-20s%\n","Person's Name: ", this.fName);
+        String str = String.format("%-10s%-4d\n","Person's ID: ",Person.personID);
+        str += String.format("%-15%-20s%\n","Person's Name: ", this.fName);
         str += String.format("%-15s%-20s\n","Person's Last Name: ", this.lName);
         str += String.format("%-10s%-25s\n", "Person's email: ",this.email);
         str += String.format("%-10s%15s\n", "Person's Phone No: ", this.phoneNo);
         return str += String.format("%-10s%-2d\n", "Person's Age: ", this.age);
     }
         
-    
-
-    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        Person p =  (Person) obj;
+        if (this.age == p.age && this.email.equals(p.email) && this.fName.equals(p.fName) && this.lName.equals(p.lName) && this.phoneNo.equals(p.phoneNo)) {
+            return true;
+        }
+        return false;
+    }
 }
