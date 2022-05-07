@@ -15,17 +15,17 @@ public class Staff extends Person implements PayRoll {
         if (workLoad <=40) {
         this.workLoad = workLoad;
         } else {
-            System.out.println("Workload Cannot Exceed 40 Hours.");
+            throw new WorkloadTooBigException("Workload cannot be greater than 40 hours");
         }
         this.duty = duty;
     }
 
-    public Staff(String fName, String lName, String email, String phoneNo, int age, double workLoad, String duty) {
-        super(fName, lName, email, phoneNo, age);
+    public Staff(String category,int personID,String fName, String lName, String email, String phoneNo, int age, double workLoad, String duty) {
+        super(personID,category,fName, lName, email, phoneNo, age);
         if (workLoad <=40) {
             this.workLoad = workLoad;
             } else {
-                System.out.println("Workload Cannot Exceed 40 Hours.");
+                throw new WorkloadTooBigException("Workload cannot be greater than 40 hours");
             }
         this.duty = duty;
     }
@@ -44,7 +44,7 @@ public class Staff extends Person implements PayRoll {
         if (workLoad <=40) {
             this.workLoad = workLoad;
             } else {
-                System.out.println("Workload Cannot Exceed 40 Hours.");
+                throw new WorkloadTooBigException("Workload cannot be greater than 40 hours");
             }
     }
 
@@ -58,7 +58,7 @@ public class Staff extends Person implements PayRoll {
 
     @Override
     public void setCategory(String category) {
-        this.category = category;
+      this.category = category;
     }
 
     @Override
@@ -73,5 +73,21 @@ public class Staff extends Person implements PayRoll {
         str += String.format("%-10s%-15s\n","Staffs' Duty: ", this.duty);
         return str += String.format("%-10s%.2f\n", "Staff's PayRoll: ", this.ComputePayRoll());
     }
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Staff)) {
+            return false;
+        }
+        Staff staff = (Staff) o;
+        boolean result = super.equals(staff); //checks if the variables from person are the same between 2 staff members
+        if (this.workLoad == staff.workLoad && this.duty == staff.duty && result == true) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
 }

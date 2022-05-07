@@ -1,15 +1,14 @@
 package Project;
 
 public class FullTimeTeacher extends Teacher implements PayRoll {
-    private int yearsWorked;
+
+    private boolean dean;
 
     FullTimeTeacher() {
-        this.yearsWorked = 0;
     }
 
-    FullTimeTeacher(String category, String fName, String lName, String email, String phoneNo, int age, String specialty, String degree, int yearsWorked) {
-    super(category, fName, lName, email, phoneNo, age, specialty, degree);
-    this.yearsWorked = yearsWorked;
+    FullTimeTeacher(String category,int personID, String fName, String lName, String email, String phoneNo, int age, String specialty, String degree) {
+    super(personID,category,fName, lName, email, phoneNo, age, specialty, degree);
     }
 
     @Override
@@ -30,19 +29,26 @@ public class FullTimeTeacher extends Teacher implements PayRoll {
         return payRoll = 0.85 * (32 * degreeRate * 2);
     }
 
-    public int getYearsWorked() {
-        return yearsWorked;
-    }
-
-    public void setYearsWorked(int yearsWorked) {
-        this.yearsWorked = yearsWorked;
-    }
-    
-    @Override
+ @Override
     public String toString() {
         String str = super.toString();
-        str += String.format("%-10s%-2d\n","Years Worked: ", this.yearsWorked);
         return str += String.format("%-15s%.2f\n","Teacher's PayRoll: ", this.ComputePayRoll());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof FullTimeTeacher)) {
+            return false;
+        }
+        FullTimeTeacher f = (FullTimeTeacher) o;
+        boolean result = super.equals(f);
+         if (result == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

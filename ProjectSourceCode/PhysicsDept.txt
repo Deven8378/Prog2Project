@@ -1,0 +1,29 @@
+Department PhysicsDept
+Department ID 2
+Category: Dean      
+Teacher's name: Alex                
+Teacher's Last Name: Hones               
+Teacher's Email: jones@gmail.com          
+Teacher's Phone No: 514-212-4721   
+Teacher's Age: 56
+Teacher's Specialty: Chemistry      
+Teacher's Degree: PhD            
+Is Dean:  true
+Teacher's PayRoll: 6092.80
+
+All Staff members in this Department: 
+[]
+-------------------------------------------------
+All Teachers in this Department: 
+[Category: null      
+Teacher's name: Demarcus            
+Teacher's Last Name: Cousins             
+Teacher's Email: cmac@gmail.com           
+Teacher's Phone No: 514-635-7535   
+Teacher's Age: 35
+Teacher's Specialty: Math           
+Teacher's Degree: PhD            
+Is Dean:  false
+Teacher's Hours Worked: 40.0
+Teacher's PayRoll: 6809.60
+]

@@ -12,8 +12,8 @@ public class PartTimeTeacher extends Teacher implements PayRoll {
         this.hoursWorked = hoursWorked;
     }
 
-    public PartTimeTeacher(double hoursWorked,String category, String fName, String lName, String email, String phoneNo, int age, String specialty, String degree) {
-        super(category, fName, lName, email, phoneNo, age, specialty, degree);
+    public PartTimeTeacher(String category, double hoursWorked, int personID,String fName, String lName, String email, String phoneNo, int age, String specialty, String degree) {
+        super(personID,category,fName, lName, email, phoneNo, age, specialty, degree);
         this.hoursWorked = hoursWorked;
     }
 
@@ -49,6 +49,23 @@ public class PartTimeTeacher extends Teacher implements PayRoll {
         str += String.format("%-15s%.1f\n","Teacher's Hours Worked: ", this.hoursWorked);
         return str += String.format("%-15s%.2f\n","Teacher's PayRoll: ", this.ComputePayRoll());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof PartTimeTeacher)) {
+            return false;
+        }
+        PartTimeTeacher p = (PartTimeTeacher) o;
+        boolean result = super.equals(p);
+        if (this.hoursWorked == p.hoursWorked && result == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 

@@ -1,0 +1,3 @@
+PartTimeTeacher 40 101 Demarcus Cousins cmac@gmail.com 514-635-7535 35 Math PhD
+FullTimeTeacher 102 Kanel Joseph kanel@gmail.com 514-643-3512 28 Physics Master dean
+FullTimeTeacher 103 Alex Hones jones@gmail.com 514-212-4721 56 Chemistry PhD dean

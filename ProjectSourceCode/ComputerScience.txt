@@ -1,0 +1,13 @@
+Department ComputerScience
+Department ID 1
+Category: Dean      
+Teacher's name: Kanel               
+Teacher's Last Name: Joseph              
+Teacher's Email: kanel@gmail.com          
+Teacher's Phone No: 514-643-3512   
+Teacher's Age: 28
+Teacher's Specialty: Physics        
+Teacher's Degree: Master         
+Is Dean:  true
+Teacher's PayRoll: 4460.80
+
